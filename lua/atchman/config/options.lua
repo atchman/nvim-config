@@ -1,15 +1,18 @@
--- Options of Nvim
-
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
+-- setting options
 
 local opt = vim.opt
 
 opt.clipboard = "unnamedplus"       -- allows neovim to access the system clipboard
 
-opt.expandtab = true        -- Use spaces instead of tabs
-opt.tabstop = 4             -- Number of spaces tabs count for
+opt.expandtab = true    -- Use spaces instead of tabs
+opt.tabstop = 4         -- Number of spaces tabs count for
 
+opt.hlsearch = false    -- Set highlight on search
+
+opt.mouse = 'a'       -- Enable mouse mode
+
+opt.undofile = true   -- Save undo history
+opt.undolevels = 10000
 
 
 --[[
