@@ -1,6 +1,11 @@
 -- main init of atchman
 
--- install lazy
+-- set <space> as the leader key
+vim.g.mapleader = ' '
+vim.g.maplocalleader = ' '
+
+
+-- install lazy as package manager
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -15,11 +20,13 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 
+-- setup call by lazy.nvim
+require("lazy").setup("plugins")
+
+
 -- Option / Core
 require "atchman.config.options"
 require "atchman.config.keymaps"
 
 
--- Plugins managed by lazy.nvim
-require("lazy").setup("plugins")
 
