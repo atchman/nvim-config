@@ -2,26 +2,55 @@
 
 local opt = vim.opt
 
+
+-- clipboard
 opt.clipboard = "unnamedplus"       -- allows neovim to access the system clipboard
 
-opt.expandtab = true    -- Use spaces instead of tabs
+-- tab
 opt.tabstop = 4         -- Number of spaces tabs count for
+opt.softtabstop = 4     -- 
+opt.shiftwidth = 4      --
+opt.expandtab = true    -- Use spaces instead of tabs
 
+-- indent
+opt.smartindent = true      -- Insert indents automatically
+
+opt.wrap = false            -- Disable line wrap
+
+-- line numbers
+opt.number = true       -- Print line number
+opt.relativenumber = true       -- Relative line numbers
+
+-- search
 opt.hlsearch = false    -- Set highlight on search
+opt.incsearch = true    -- 
+
+opt.termguicolors = true    -- True color support
+
+opt.scrolloff = 8       -- Lines of context
+opt.signcolumn = "yes"      -- Always show the signcolumn, otherwise it would shift the text each time
+opt.isfname:append("@-@")
+
+opt.updatetime = 200        -- Save swap file and trigger CursorHold
 
 opt.mouse = 'a'       -- Enable mouse mode
 
+-- undo
+opt.swapfile = false
+opt.backup = false
+opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 opt.undofile = true   -- Save undo history
-opt.undolevels = 10000
+
+-- cursor
+opt.cursorline = true       -- Enable highlighting of the current line
+opt.guicursor = ""          -- normal insert mode cursor the same
+
+vim.opt.colorcolumn = "80"
+
 
 
 --[[
---
 Option Example
-
-
-vim.g.mapleader = " "
-vim.g.maplocalleader = " "
 
 local opt = vim.opt
 
