@@ -42,10 +42,10 @@ opt.undodir = os.getenv("HOME") .. "/.vim/undodir"
 opt.undofile = true   -- Save undo history
 
 -- cursor
-opt.cursorline = true       -- Enable highlighting of the current line
+opt.cursorline = true       -- Enable highlighting of the cursor line
+opt.cursorcolumn = false 
 opt.guicursor = ""          -- normal insert mode cursor the same
 
-vim.opt.colorcolumn = "80"
 
 
 
@@ -55,6 +55,7 @@ Option Example
 local opt = vim.opt
 
 
+vim.opt.colorcolumn = "80"
 opt.autowrite = true        -- Enable auto write
 opt.clipboard = "unnamedplus"       -- Sync with system clipboard
 opt.completeopt = "menu,menuone,noselect"
