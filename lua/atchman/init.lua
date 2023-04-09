@@ -20,13 +20,14 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 
--- setup call by lazy.nvim
-require("lazy").setup("plugins")
-
-
 -- Option / Core
-require "atchman.config.options"
-require "atchman.config.keymaps"
+require("atchman.config.options")
+require("atchman.config.keymaps")
+
+-- setup call by lazy.nvim
+require("lazy").setup("atchman.plugin")
 
 
+-- Theme
+require("atchman.config.colorscheme")
 
