@@ -31,7 +31,7 @@ opt.scrolloff = 8       -- Lines of context
 opt.signcolumn = "yes"      -- Always show the signcolumn, otherwise it would shift the text each time
 opt.isfname:append("@-@")
 
-opt.updatetime = 200        -- Save swap file and trigger CursorHold
+opt.updatetime = 50        -- Save swap file and trigger CursorHold
 
 opt.mouse = 'a'       -- Enable mouse mode
 

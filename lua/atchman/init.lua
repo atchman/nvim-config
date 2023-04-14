@@ -5,7 +5,18 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 
+-- for nvim-tree plugin
+-- disable netrw at the very start of your init.lua (strongly advised)
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- Option / Core
+require("atchman.config.options")
+require("atchman.config.keymaps")
+
+
 -- install lazy as package manager
+-- bootstrap
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 if not vim.loop.fs_stat(lazypath) then
   vim.fn.system({
@@ -18,11 +29,6 @@ if not vim.loop.fs_stat(lazypath) then
   })
 end
 vim.opt.rtp:prepend(lazypath)
-
-
--- Option / Core
-require("atchman.config.options")
-require("atchman.config.keymaps")
 
 -- setup call by lazy.nvim
 require("lazy").setup("atchman.plugin")
