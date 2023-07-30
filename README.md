@@ -5,10 +5,11 @@ My Neovim config and some instructions for myself.
 ## Requirement
 
 * Neovim >= 0.8.0  
-* git  
+* git >= 2.19.0 
 * Nerd Font (optional)  
 * xclip (optional)  
 * tree-sitter (for treesitter)
+
 * ripgrep  
 * g++  
 
@@ -25,7 +26,7 @@ $ ln -s ~/git/nvim-config ~/.config/nvim
 ```
 
 ## Plugins
-add Plugin to ```/lua/plugin/<Plugin name>.lua```  
+    add Plugin to ```/lua/plugin/<Plugin name>.lua```  
   
 For Example:
 
