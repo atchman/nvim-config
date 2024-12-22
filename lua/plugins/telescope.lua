@@ -16,16 +16,17 @@ return {
 
       require('telescope').load_extension('fzf')
 
-      vim.keymap.set("n", "<space>fh", require('telescope.builtin').help_tags)
-      vim.keymap.set("n", "<space>fd", require('telescope.builtin').find_files)
+      vim.keymap.set("n", "<space>fh", require('telescope.builtin').help_tags, { desc = "fuzzy neovim help" })
+      vim.keymap.set("n", "<space>fd", require('telescope.builtin').find_files, { desc = "fuzzy actual directoray" })
 
       -- nvim config
       vim.keymap.set("n", "<space>en", function()
-        local opts = require('telescope.themes').get_ivy({
-          cwd = vim.fn.stdpath("config")
-        })
-        require('telescope.builtin').find_files(opts)
-      end)
+          local opts = require('telescope.themes').get_ivy({
+            cwd = vim.fn.stdpath("config")
+          })
+          require('telescope.builtin').find_files(opts)
+        end,
+        { desc = "fuzzy neovim config" })
 
       -- -- packages installed with lazy
       -- vim.keymap.set("n", "<space>ep", function()
