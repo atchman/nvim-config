@@ -18,9 +18,10 @@ return {
 
       vim.keymap.set("n", "<space>fh", require('telescope.builtin').help_tags, { desc = "fuzzy neovim help" })
       vim.keymap.set("n", "<space>fd", require('telescope.builtin').find_files, { desc = "fuzzy actual directoray" })
+      vim.keymap.set("n", "<space>fk", require('telescope.builtin').keymaps, { desc = "find keymap" })
 
       -- nvim config
-      vim.keymap.set("n", "<space>en", function()
+      vim.keymap.set("n", "<space>fn", function()
           local opts = require('telescope.themes').get_ivy({
             cwd = vim.fn.stdpath("config")
           })
@@ -29,7 +30,7 @@ return {
         { desc = "fuzzy neovim config" })
 
       -- -- packages installed with lazy
-      -- vim.keymap.set("n", "<space>ep", function()
+      -- vim.keymap.set("n", "<space>fp", function()
       --   require('telescope.builtin').find_files {
       --     cmd = vim.fs.joinpath(vim.fn.stdpath("data"), "lazy")
       --   }
