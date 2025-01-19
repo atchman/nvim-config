@@ -4,6 +4,10 @@ return {
   {
     "rose-pine/neovim",
     name = "rose-pine",
-    lazy = true
+    lazy = true,
+    priority = 1000,
+    opts = {
+
+    }
   }
 }

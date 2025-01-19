@@ -3,6 +3,7 @@
 return {
   {
     -- vim.cmd.colorscheme "rose-pine"
-    vim.cmd.colorscheme "tokyonight-moon"
+    -- vim.cmd.colorscheme "tokyonight"
+    vim.cmd.colorscheme "catppuccin"
   }
 }
