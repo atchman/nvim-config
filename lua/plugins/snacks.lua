@@ -7,12 +7,7 @@ return {
   ---@type snacks.Config
   opts = {
     -- snacks.bigfile
-    bigfile = {
-      -- your bigfile configuration comes here
-      -- or leave it empty to use the default settings
-      -- refer to the configuration section below
-      enabled = true,
-    },
+    bigfile = { enabled = true },
     -- snacks.dashboard
     dashboard = {
       enabled = true,
@@ -75,5 +70,6 @@ return {
         "pdf",
       },
     },
+    quickfile = { enabled = true },
   },
 }

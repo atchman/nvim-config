@@ -30,14 +30,17 @@ vim.opt.cursorline = true
 vim.opt.cursorcolumn = false
 
 -- keyman
-vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>")
-vim.keymap.set("n", "<space>x", ":.lua<CR>")
-vim.keymap.set("v", "<space>x", ":lua<CR>")
+vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>", { desc = "source file" })
+vim.keymap.set("n", "<space>x", ":.lua<CR>", { desc = "source .lua file" })
+vim.keymap.set("v", "<space>x", ":lua<CR>", { desc = "source lua" })
 
-vim.keymap.set("n", "<M-j>", "<cmd>cnext<CR>")
-vim.keymap.set("n", "<M-k>", "<cmd>cprev<CR>")
+vim.keymap.set("n", "<M-j>", "<cmd>cnext<CR>", { desc = "Qui[C]kfix [N]ext" })
+vim.keymap.set("n", "<M-k>", "<cmd>cprev<CR>", { desc = "Qui[C]kfix [P]revious" })
 
-vim.keymap.set("i", "<C-c>", "<esc>")
+vim.keymap.set("i", "<C-c>", "<esc>", { desc = "Es[c]ape" })
+
+-- select last inserted text
+vim.keymap.set("n", "gV", "`[v`]", opts)
 
 -- Highlight when yanking (copying) text
 --  Try it with `yap` in normal mode
@@ -60,9 +63,10 @@ vim.api.nvim_create_autocmd('TermOpen', {
 })
 local job_id = 0
 vim.keymap.set("n", "<space>st", function()
-  vim.cmd.vnew()
-  vim.cmd.term()
-  vim.cmd.wincmd("J")
-  vim.api.nvim_win_set_height(0, 5)
-  job_id = vim.bo.channel
-end)
+    vim.cmd.vnew()
+    vim.cmd.term()
+    vim.cmd.wincmd("J")
+    vim.api.nvim_win_set_height(0, 5)
+    job_id = vim.bo.channel
+  end,
+  { desc = "[S] [T]erminal" })

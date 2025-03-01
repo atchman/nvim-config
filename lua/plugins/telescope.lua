@@ -16,20 +16,20 @@ return {
 
       require('telescope').load_extension('fzf')
 
-      vim.keymap.set("n", "<space>fh", require('telescope.builtin').help_tags, { desc = "fuzzy neovim help" })
-      vim.keymap.set("n", "<space>fd", require('telescope.builtin').find_files, { desc = "fuzzy actual directoray" })
-      vim.keymap.set("n", "<space>fk", require('telescope.builtin').keymaps, { desc = "find keymap" })
+      vim.keymap.set("n", "<space>sh", require('telescope.builtin').help_tags, { desc = "[S]earch neovim [H]elp" })
+      vim.keymap.set("n", "<space>sd", require('telescope.builtin').find_files, { desc = "[S]earch actual [D]irectoray" })
+      vim.keymap.set("n", "<space>sk", require('telescope.builtin').keymaps, { desc = "[S]earch [K]eymap" })
 
       -- nvim config
-      vim.keymap.set("n", "<space>fn", function()
+      vim.keymap.set("n", "<space>sn", function()
           local opts = require('telescope.themes').get_ivy({
             cwd = vim.fn.stdpath("config")
           })
           require('telescope.builtin').find_files(opts)
         end,
-        { desc = "fuzzy neovim config" })
+        { desc = "[S]earch [N]eovim config" })
 
-      -- -- packages installed with lazy
+      -- -- packages installed with lany
       -- vim.keymap.set("n", "<space>fp", function()
       --   require('telescope.builtin').find_files {
       --     cmd = vim.fs.joinpath(vim.fn.stdpath("data"), "lazy")
@@ -37,7 +37,7 @@ return {
       -- end)
 
       -- multigrep
-      require "config.multigrep".setup()
+      require "custom.multigrep".setup()
     end
   }
 }

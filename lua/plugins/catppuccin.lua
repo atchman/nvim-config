@@ -15,6 +15,27 @@ return {
           crust = "#000000",
         },
       },
+      integrations = {
+        blink_cmp = true,
+        gitsigns = true,
+        harpoon = true,
+        mason = true,
+        mini = {
+          enabled = true,
+          indentscope_color = "", -- catppuccin color (eg. `lavender`) Default: text
+        },
+        treesitter = true,
+        snacks = {
+          enabled = false,
+          indent_scope_color = "", -- catppuccin color (eg. `lavender`) Default: text
+        },
+        telescope = {
+          enabled = true,
+          -- style = "nvchad"
+        },
+        lsp_trouble = true,
+        which_key = true,
+      },
     },
   }
 }
