@@ -10,6 +10,9 @@ return {
           library = {
             { path = "${3rd}/luv/library", words = { "vim%.uv" } },
           },
+          snippets = {
+            preset = "luasnip",
+          },
         },
       },
       {

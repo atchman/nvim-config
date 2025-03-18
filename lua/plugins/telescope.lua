@@ -19,6 +19,8 @@ return {
       vim.keymap.set("n", "<space>sh", require('telescope.builtin').help_tags, { desc = "[S]earch neovim [H]elp" })
       vim.keymap.set("n", "<space>sd", require('telescope.builtin').find_files, { desc = "[S]earch actual [D]irectoray" })
       vim.keymap.set("n", "<space>sk", require('telescope.builtin').keymaps, { desc = "[S]earch [K]eymap" })
+      vim.keymap.set("n", "<space>sb", require('telescope.builtin').buffers, { desc = "[S]earch [B]uffer" })
+      vim.keymap.set("n", "<space>sD", require('telescope.builtin').diagnostics, { desc = "[S]earch [D]iagnostic" })
 
       -- nvim config
       vim.keymap.set("n", "<space>sn", function()
