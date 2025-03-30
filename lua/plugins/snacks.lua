@@ -34,6 +34,7 @@ return {
           { icon = " ", key = "s", desc = "Restore Session", section = "session" },
           { icon = "󰒲 ", key = "L", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
           { icon = "󱁤 ", key = "M", desc = "Mason", action = ":Mason", },
+          { icon = " ", key = "N", desc = "Neogit", action = ":Neogit", },
           { icon = " ", key = "q", desc = "Quit", action = ":qa" },
         },
         -- Used by the `header` section
