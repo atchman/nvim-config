@@ -1,7 +1,11 @@
 -- rust-analyzer
 --
+
+---@type vim.lsp.Config
 return {
   cmd = { 'rust-analyzer' },
-  root_markers = { '.git' },
   filetypes = { 'rs' },
+  root_markers = { '.git' },
+  -- settings = {
+  -- }
 }
