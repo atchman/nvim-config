@@ -1,0 +1,15 @@
+snippet lspc "neovim template to write lsp-config file"
+	-- ${1} 
+	--
+
+	---@type vim.lsp.Config
+	return {
+	  cmd = { '${2}' },
+	  filetypes = { '${3}' },
+	  root_markers = { '.git', ${4} },
+	  settings = {
+	    ${5}
+  	  }
+	}
+	
+
