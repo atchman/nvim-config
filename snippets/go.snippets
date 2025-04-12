@@ -1,2 +1,14 @@
+snippet main "main file"
+	package main
+
+	func main() {
+		$0
+	}
+
+snippet print "Print Line"
+	fmt.Println("$0", $1)
+
 snippet errl "Error handling with log.Fatal"
-if err != nil {
+	if err != nil {
+		log.Fatalf("${0}: %v", err)	 
+	}
