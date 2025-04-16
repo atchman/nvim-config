@@ -11,8 +11,14 @@ return {
   config = function()
     require("telescope").load_extension("rfc")
   end,
-      keys = {
-        { "<leader>sr", function() require('telescope').extensions.rfc.rfc() end, { desc = "RFC Browser" } },
+  keys = {
+    {
+      "<leader>sr",
+      function()
+        require('telescope').extensions.rfc.rfc()
+      end,
+      desc = "[r]FC Browser",
     },
+  },
 
 }

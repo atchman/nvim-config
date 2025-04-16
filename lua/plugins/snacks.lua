@@ -1,5 +1,14 @@
 -- snacks
 --
+local default_header = [[
+███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗
+████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║
+██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║
+██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║
+██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║
+╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝]]
+
+
 return {
   "folke/snacks.nvim",
   priority = 1000,
@@ -8,6 +17,7 @@ return {
   opts = {
     -- snacks.bigfile
     bigfile = { enabled = true },
+    bufdelete = {enabled = true },
     -- snacks.dashboard
     dashboard = {
       enabled = true,
@@ -20,7 +30,9 @@ return {
       preset = {
         -- Defaults to a picker that supports `fzf-lua`, `telescope.nvim` and `mini.pick`
         ---@type fun(cmd:string, opts:table)|nil
-        pick = nil,
+        pick = "telescope.nvim",
+        -- Used by the `header` section
+        header = default_header,
         -- Used by the `keys` section to show keymaps.
         -- Set your custom keymaps here.
         -- When using a function, the `items` argument are the default keymaps.
@@ -31,20 +43,18 @@ return {
           { icon = " ", key = "g", desc = "Find Text", action = ":lua Snacks.dashboard.pick('live_grep')" },
           { icon = " ", key = "r", desc = "Recent Files", action = ":lua Snacks.dashboard.pick('oldfiles')" },
           { icon = " ", key = "c", desc = "Config", action = ":lua Snacks.dashboard.pick('files', {cwd = vim.fn.stdpath('config')})" },
-          { icon = " ", key = "s", desc = "Restore Session", section = "session" },
+          -- { icon = " ", key = "s", desc = "Restore Session", section = "session" },
           { icon = "󰒲 ", key = "L", desc = "Lazy", action = ":Lazy", enabled = package.loaded.lazy ~= nil },
           { icon = "󱁤 ", key = "M", desc = "Mason", action = ":Mason", },
           { icon = " ", key = "N", desc = "Neogit", action = ":Neogit", },
+          { icon = " ", key = "H", desc = "Health", action = ":checkhealth", },
           { icon = " ", key = "q", desc = "Quit", action = ":qa" },
         },
-        -- Used by the `header` section
-        header = [[
-███╗   ██╗███████╗ ██████╗ ██╗   ██╗██╗███╗   ███╗
-████╗  ██║██╔════╝██╔═══██╗██║   ██║██║████╗ ████║
-██╔██╗ ██║█████╗  ██║   ██║██║   ██║██║██╔████╔██║
-██║╚██╗██║██╔══╝  ██║   ██║╚██╗ ██╔╝██║██║╚██╔╝██║
-██║ ╚████║███████╗╚██████╔╝ ╚████╔╝ ██║██║ ╚═╝ ██║
-╚═╝  ╚═══╝╚══════╝ ╚═════╝   ╚═══╝  ╚═╝╚═╝     ╚═╝]],
+      },
+      sections = {
+        { section = "header" },
+        { section = "keys", gap = 1 },
+        { section = "startup" },
       },
     },
     -- snacks.image
