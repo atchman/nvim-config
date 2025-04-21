@@ -25,6 +25,18 @@ return {
         end,
         desc = "Bufferline Editor Toogle",
       },
+      {
+        "<leader>be",
+        function()
+          require("bufferline-editor").editor_toggle()
+        end,
+        desc = "[B]ufferline [E]dit",
+      },
+      {
+        "<leader>bd",
+        "<cmd>bdelete<cr>",
+        desc = "[B]uffer [D]elete",
+      },
     },
   },
 }
