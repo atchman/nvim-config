@@ -32,9 +32,18 @@ return {
       "WhoIsSethDaniel/mason-tool-installer.nvim",
     },
     config = function()
-      local capabilities = require('blink.cmp').get_lsp_capabilities()
+      -- capabilities
+      local capabilities = {
+        textDocument = {
+          foldingRange = {
+            dynamicRegistration = false,
+            lineFoldingOnly = true
+          }
+        }
+      }
+      capabilities = require('blink.cmp').get_lsp_capabilities(capabilities)
       -- installed lua lsp with system package manager
-      require("lspconfig").lua_ls.setup { capabilities = capabilities }
+      -- require("lspconfig").lua_ls.setup { capabilities = capabilities }
 
       -- auto formating on key
       -- vim.keymap.set("n", "<space>f", function() vim.lsp.buf.format() end)

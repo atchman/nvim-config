@@ -4,10 +4,13 @@
 return {
   {
     'saghen/blink.cmp',
+    event = "VimEnter",
+    version = "1.*",
     -- optional: provides snippets for the snippet source
-    dependencies = { 'L3MON4D3/LuaSnip' },
-    version = 'v1.*',
-
+    dependencies = {
+      'L3MON4D3/LuaSnip',
+      "folke/lazydev.nvim"
+    },
     ---@module 'blink.cmp'
     ---@type blink.cmp.Config
     opts = {
@@ -32,6 +35,7 @@ return {
           },
         },
       },
+      fuzzy = { implementation = 'lua' },
 
       signature = { enabled = true },
     },
