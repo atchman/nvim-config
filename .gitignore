@@ -1,0 +1,7 @@
+.env
+
+# luarocks build files
+*.src.rock
+*.zip
+*.tar.gz
+
