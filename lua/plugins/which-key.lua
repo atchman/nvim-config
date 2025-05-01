@@ -55,6 +55,9 @@ return {
         end,
         desc = "Buffer Local Keymaps (which-key)",
       },
+      { "<leader>b", group = "Buffer" },
+      { "<leader>l", group = "LSP" },
+      { "<leader>s", group = "Search" },
     },
   }
 }
