@@ -7,7 +7,5 @@ return {
   filetypes = { 'typst' },
   root_markers = { '.git', },
   -- settings = {
-    --   }
-  }
-
-
+  --   }
+}

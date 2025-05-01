@@ -14,7 +14,8 @@ require("config.colorscheme")
 
 -- lsp
 vim.lsp.enable({
-  'lua_ls',
-  'gopls',
-  'rust-analyzer',
+  "lua_ls",
+  -- 'gopls',
+  -- 'rust-analyzer',
+  -- "systemd",
 })
