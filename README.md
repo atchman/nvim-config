@@ -30,4 +30,5 @@ sudo make install
 
 ## Thank you
 
-tjdevries - [advent of neovim](https://www.youtube.com/playlist?list=PLep05UYkc6wTyBe7kPjQFWVXTlhKeQejM)
+- tjdevries - [advent of neovim](https://www.youtube.com/playlist?list=PLep05UYkc6wTyBe7kPjQFWVXTlhKeQejM)
+- [kickstart.nvim](https://github.com/nvim-lua/kickstart.nvim)
