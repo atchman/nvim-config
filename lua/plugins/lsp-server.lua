@@ -1,34 +1,74 @@
--- lsp server bootstrapping
--- mason
+-- LSP Server Installation
 --
 
+-- LSP Servers
 local servers = {
-  bashls = true,
-  gopls = true,
-  rust_analyzer = true,
+  -- ansible
+  "ansible-language-server",
+  "ansible-lint",
+  -- bash
+  "bash-language-server",
+  -- golang
+  "gopls",
+  -- lua
+  "lua-language-server",
+  "stylua", -- Used to format Lua code
+  -- lua_ls = {
+  --   settings = {
+  --     Lua = {
+  --       completion = {
+  --         callSnippet = "Replace",
+  --       },
+  --       -- You can toggle below to ignore Lua_LS's noisy `missing-fields` warnings
+  --       -- diagnostics = { disable = { 'missing-fields' } },
+  --     },
+  --   },
+  -- },
+  -- rust
+  "rust-analyzer",
+  -- shell
+  "shfmt",
+  -- systemd
+  "systemd-language-server",
+  "systemdlint",
+  -- typst
+  "tinymist",
 }
 
-local ensure_installed = vim.tbl_keys(servers or {})
-vim.list_extend(ensure_installed, {
-  'stylua', -- Used to format Lua code
-  "shfmt",
-})
-
+-- capabilities
+local capabilities = require('blink.cmp').get_lsp_capabilities(capabilities)
+-- capabilities
+-- local capabilities = {
+--   textDocument = {
+--     foldingRange = {
+--       dynamicRegistration = false,
+--       lineFoldingOnly = true
+--     }
+--   }
+-- }
 
 return {
-  "williamboman/mason.nvim",
-  dependencies = {
-    { "williamboman/mason-lspconfig.nvim", config = function() end },
-    "WhoIsSethDaniel/mason-tool-installer.nvim",
+  {
+    "neovim/nvim-lspconfig",
+    enabled = true,
+    version = "2.*",
   },
-  cmd = "Mason",
-  build = ":MasonUpdate",
-  opts_extend = { "ensure_installed" },
-  opts = {
-    ensure_installed = {
-      "stylua",
-      "shfmt",
+  {
+    "mason-org/mason-lspconfig.nvim",
+    enabled = true,
+    version = "2.*",
+    dependencies = {
+      "neovim/nvim-lspconfig",
+      "mason-org/mason.nvim",
+      "saghen/blink.cmp",
+      "folke/lazydev.nvim",
+    },
+    opts = {
+      -- ensure_installed = ensure_installed,
+      -- automatic_installation = false,
+      ensure_installed = ensure_installed,
+      automatic_enable = true
     },
   },
-  require('mason-tool-installer').setup { ensure_installed = ensure_installed }
 }
+

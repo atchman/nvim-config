@@ -13,9 +13,12 @@ require("config.lazy")
 require("config.colorscheme")
 
 -- lsp
-vim.lsp.enable({
-  "lua_ls",
-  -- 'gopls',
-  -- 'rust-analyzer',
-  -- "systemd",
-})
+-- require("config.lsp.")
+-- vim.lsp.enable({
+--   "lua_ls",
+-- 'gopls',
+-- 'rust-analyzer',
+-- "systemd",
+-- })
+-- diagnostic
+require("config.diagnostics")

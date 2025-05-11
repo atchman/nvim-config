@@ -1,16 +1,19 @@
--- mason
--- package manager for
+-- Mason
+-- Package Manager for
 -- LSP servers, DAP servers, linters, and formatters
 
 return {
-  "williamboman/mason.nvim",
-  cmd = "Mason",
-  build = ":MasonUpdate",
-  opts_extend = { "ensure_installed" },
-  opts = {
-    ensure_installed = {
-      "stylua",
-      "shfmt",
+    "mason-org/mason.nvim",
+    enabled = true,
+    version = "2.*",
+    lazy = false,
+    cmd = "Mason",
+    build = ":MasonUpdate",
+    opts_extend = { "ensure_installed" },
+    opts = {
+      ensure_installed = {
+        'stylua', -- Used to format Lua code
+        "shfmt",
+      }
     },
-  },
 }

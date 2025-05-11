@@ -3,14 +3,15 @@
 
 vim.filetype.add({
   extension = {
-    container = "dosini",
-    build = "dosini",
-    image = "dosini",
-    network = "dosini",
-    pod = "dosini",
+    container = "systemd",
+    build = "systemd",
+    image = "systemd",
+    network = "systemd",
+    pod = "systemd",
     rasi = "rasi",
     rofi = "rasi",
-    volume = "dosini",
+    secret = "secret",
+    volume = "systemd",
     wofi = "rasi"
   },
   filename = {
