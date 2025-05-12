@@ -6,52 +6,55 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 vim.g.have_nerd_font = true
 
-vim.opt.clipboard = "unnamedplus"
-vim.opt.fileencoding = "utf-8"
-vim.opt.termguicolors = true
+vim.schedule(function()
+  vim.o.clipboard = "unnamedplus"
+end)
 
-vim.opt.mouse = "a"
+vim.o.fileencoding = "utf-8"
+vim.o.termguicolors = true
 
-vim.opt.expandtab = true
-vim.opt.shiftwidth = 4
-vim.opt.softtabstop = 4
-vim.opt.tabstop = 4
+vim.o.mouse = "a"
 
-vim.opt.number = true
-vim.opt.relativenumber = true
+vim.o.expandtab = true
+vim.o.shiftwidth = 4
+vim.o.softtabstop = 4
+vim.o.tabstop = 4
 
-vim.opt.scrolloff = 20
+vim.o.number = true
+vim.o.relativenumber = true
+
+vim.o.scrolloff = 20
 
 -- update time
-vim.opt.updatetime = 250
+vim.o.updatetime = 250
 -- mapped sequence wait time
-vim.opt.timeoutlen = 300
+vim.o.timeoutlen = 300
 
 -- cursor
-vim.opt.cursorline = true
-vim.opt.cursorcolumn = false
+vim.o.cursorline = true
+vim.o.cursorcolumn = false
 
-vim.opt.hlsearch = false
-vim.opt.incsearch = true
-vim.opt.ignorecase = true
-vim.opt.signcolumn = "yes"
-vim.opt.smartcase = true
+vim.o.hlsearch = false
+vim.o.incsearch = true
+vim.o.ignorecase = true
+vim.o.signcolumn = "yes"
+vim.o.smartcase = true
 
-vim.opt.splitright = true
-vim.opt.splitbelow = true
+vim.o.splitright = true
+vim.o.splitbelow = true
 
 -- Sets how neovim will display certain whitespace characters in the editor.
 --  See `:help 'list'`
 --  and `:help 'listchars'`
-vim.opt.list = true
+vim.o.list = true
 vim.opt.listchars = { tab = '» ', trail = '·', nbsp = '␣' }
 
-vim.opt.showmode = false
+vim.o.showmode = false
 
 -- Save undo history
-vim.opt.undofile = true
-vim.opt.undodir = vim.fn.stdpath("cache") .. "/undo"
-vim.opt.shadafile = vim.fn.stdpath("cache") .. "/default.shada"
+vim.o.undofile = true
+vim.o.undodir = vim.fn.stdpath("cache") .. "/undo"
+vim.o.shadafile = vim.fn.stdpath("cache") .. "/default.shada"
 
 
 -- diff
